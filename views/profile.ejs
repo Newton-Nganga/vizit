@@ -1,0 +1,55 @@
+<%- include('./partials/head'); %>  
+</head>
+<body class="dash">
+  <%- include('./partials/dash-aside-nav'); %> 
+
+ <section class="dash-content profile-content">
+  
+  <div class="u-icon">
+    <p>Profile</p>
+    <img src="<%=user.profileImage ? user.profileImage : '/static/images/user-icon.svg' %> " class="user-icon profileIconEl" id=""/>
+    <!-- onInput upload to cloudinary -->
+    <button class="u-profile-btn">
+      <div class="file-wrapper">
+        <input type="file" class="image-upload" value="<%=user.profileImage ? user.profileImage:''%>"name="profile-image" id="profile-image">
+        Change icon
+      </div>
+    </button>
+  </div>
+  <div class="u-details" id="profile-form">
+    
+  
+    <p class="form-group">
+        <label>First Name</label>
+        <input class="login-input" value="<%=user.firstname ? user.firstname:''%>" type="text" name="fName" placeholder="John"  id="fName"/>
+    </p>
+    <p class="form-group">
+        <label>Last Name</label>
+        <input class="login-input" value="<%=user.lastname ? user.lastname:''%>" type="text" name="lName" placeholder="Doe"  id="lName"/>
+    </p>
+    <p class="form-group">
+        <label>Username</label>
+        <input class="login-input" value="<%=user.username ? user.username:''%>"  type="text" name="uName" placeholder="username"  id="uName"/>
+    </p>
+    <p class="form-group">
+        <label>Phone number</label>
+        <input class="login-input"  value="<%=user.phone ? user.phone:''%>" type="number" name="phone" placeholder="+254 7_ _ _ _ _ _ _ _"" id="phone"/>
+    </p>
+    <p class="form-group">
+        <label>Email Address</label>
+        <input class="login-input"  value="<%=user.email ? user.email:''%>"  type="email" name="email" placeholder="your@email.com"  id="email"/>
+    </p>
+    <div class="u-details-formgrp">
+    <button class="u-profile-btn update" name="update">Update</button>
+    <button class="u-profile-btn del" name="delete">Delete</button>
+    </div>
+  </form>
+ </section>
+ <div class="loader-spinner hide" id="loader-spinner">
+ <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <p>uploading image ...</p>
+</div>
+ <script src="/static/js/script.js"></script>
+ <script src="/static/js/profile.js"></script>
+</body>
+</html>

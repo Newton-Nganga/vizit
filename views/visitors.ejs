@@ -1,0 +1,83 @@
+<%- include('./partials/head'); %>  
+</head>
+<body class="dash">
+  <%- include('./partials/dash-aside-nav'); %> 
+
+ <section class="dash-content">
+  <div class="top-section">
+    <div class="entries">
+      <span>show</span>
+      <input type="number" value="<=visitors? visitors.length : '8' %>"/>
+      <span>entries</span>
+    </div>
+    <form class="search-input">
+     <span class="search-icon"><i class="fas fa-search" style="color: #f7f7f7;"></i>
+    </span>
+    <input type="search" placeholder="search by name"/>
+    </form>
+  </div>
+<table width="100%">
+  <thead>
+    <tr class="head-row">
+      <tr>
+      <th><input type="checkbox"/></th>
+      <th>Name</th>
+      <th>Contact</th>
+      <th>Status</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% visitors?.map((visitor,index)=>{ %>
+    <tr class="user-data" key="<%=visitor.id %>">
+      <td class="check"><input type="checkbox"/></td>
+      <td class="u-data">
+        <div class="t-content">
+        <img class="dash-link-img" src="<%= visitor.visitorIcon ? visitor.visitorIcon : '/static/images/user-icon.svg' %>">
+        <div class="u-data-name">
+          <p class="full-name"><%=visitor.fName %> <%=visitor.lName %></p>
+          <p><%=visitor.uName%></p>  
+        </div>
+        </div>
+      </td> 
+      <td>
+        <div class="u-data-name">
+          <p class="full-name"><%=visitor.email%></p>
+          <p><%=visitor.phone%></p>  
+        </div>
+      </td>
+      <td class="u-data">
+        <span class="come-in"><%=visitor.status%></span>
+      </td> 
+      <td>
+        <i class="address"><%=visitor.address%></i>
+      </td>
+      <td class="u-data">
+        <div class="t-content">
+          <a href="/visitors/<%=visitor.id%>/?token=<%=token%>" id="<%=visitor.id%>" class="update-link"><i class="far fa-edit" style="color: #2684e8;"></i></a>
+          <button id="<%=visitor.id%>" class="delete-link"><i class="far fa-trash-alt" style="color: #f83030;"></i></button>
+        </div>
+      </td> 
+  </tr> 
+  <% }) %>
+  </tbody>
+</table>
+ <div class="bottom-section">
+  <div class="entries">
+    <span>showing 8 of 20 entries</span>
+  </div>
+  <div class="pagination">
+    <button>pre</button>
+    <span>1</span>
+    <button>nxt</button>
+  </div>
+ </div>
+ </section>
+<!-- <div class="brandy">
+    <i>by <br> Newton</i>
+</div> -->
+<script src="/static/js/script.js"></script>
+<script src="/static/js/handlevisitors.js"></script>
+</body>
+</html>

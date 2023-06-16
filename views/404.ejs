@@ -1,0 +1,49 @@
+<%- include('./partials/head'); %>  
+<title>404 Not found</title> 
+<style>
+   body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/static/images/bird.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+   }
+   div{
+    text-align: center;
+   }
+   h1{
+    text-align: center;
+    color: aliceblue;
+    font-size: 5rem;
+    font-weight: 600;
+   }
+   a{
+    background-color: rgb(24, 95, 177);
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 1.3rem 2rem;
+    margin: 2rem;
+    text-decoration: none;
+   }
+   a:hover{
+    border-radius: 30px;
+    background-color: rgb(24, 95, 177);
+   }
+   img{
+    width: 250px;
+    height: 250px;
+   }
+</style>
+</head>
+<body>
+    <div>
+        <h1>404 Not Found!</h1>
+        <a href="/" class="redirect">Back to home</a>
+    </div>
+   <!-- <img src="/static/images/bird.jpg" alt="404"> -->
+</body>
+</html>

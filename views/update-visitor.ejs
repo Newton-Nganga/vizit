@@ -1,0 +1,79 @@
+<%- include('./partials/head'); %>  
+</head>
+<body class="dash">
+  <%- include('./partials/dash-aside-nav'); %> 
+
+ <section class="dash-content">
+   <form class="add-u-form" method="post" action="/visitors/<%=visitor.id%>/?token=<%=token%>">
+    <div class="add-u-form-elements">
+        <div class="upload-icon-wrapper">
+            <img src="<%= visitor.visitorIcon ? visitor.visitorIcon :'/static/images/user-icon.svg' %>" class="upload-icon visitor-icon" id="">
+             <!-- onInput upload to cloudinary -->
+            <button class="u-profile-btn">
+                <div class="file-wrapper">
+                    <input type="file" class="image-upload" id="visitor-image">
+                    Upload image
+                </div>
+            </button>
+         </div>
+        <p class="form-group">
+            <label>Firstname</label>
+            <input class="login-input"  type="text" name="fName" value="<%= visitor.fName %>" placeholder="John"  id="fName"/>
+        </p>
+        <p class="form-group">
+            <label>Lastname</label>
+            <input class="login-input"  type="text" name="lName" value="<%= visitor.lName %>" placeholder="Doe"  id="lName"/>
+        </p>
+        <p class="form-group">
+            <label>Username</label>
+            <input class="login-input"  type="text" name="uName" value="<%= visitor.uName %>" placeholder="username"  id="uName"/>
+        </p>
+        <p class="form-group">
+            <label>Phone</label>
+            <input class="login-input"  type="number" name="phone" value="<%= visitor.phone %>" placeholder="+254 7_ _ _ _ _ _ _ _"" id="phone"/>
+        </p>
+    </div>
+    <div class="add-u-form-elements">
+        <p class="form-group">
+            <label>Gender</label>
+            <select aria-placeholder="gender" name='gender' value="<%= visitor.gender %>" class="login-input" id="gender">
+                <optgroup class="opt-group">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Prefer Not to say</option>
+                </optgroup>
+            </select>
+        </p>
+        <p class="form-group">
+            <label>Status</label>
+            <select aria-placeholder="Status" name='status' value="<%= visitor.status %>" class="login-input" id="status">
+                <optgroup class="opt-group">
+                    <option>Come in</option>
+                    <option>Not Come</option>
+                    <option>Left</option>
+                </optgroup>
+            </select>
+      </p>
+        <p class="form-group">
+            <label>Address</label>
+            <input class="login-input"  type="text" name="address" value="<%= visitor.address %>" placeholder="city,country"  id="address"/>
+        </p>
+        <p class="form-group">
+            <label>Email address</label>
+            <input class="login-input"  type="text" name="email" value="<%= visitor.email %>" placeholder="your@email.com"  id="email"/>
+        </p>
+      <button class="u-profile-btn update add-btn" id="add-visitor">Update visitor</button>
+    </div>
+   </form>
+ </section>
+ <div class="loader-spinner hide" id="loader-spinner">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+     <p>uploading image ...</p>
+</div>
+
+ <div class="animate__fadeInTopRight hide"><p class="response-text"></p></div>
+ <script src="/static/js/script.js"></script>
+ <script src="/static/js/updateVisitors.js"></script>
+ 
+</body>
+</html>
