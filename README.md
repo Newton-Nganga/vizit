@@ -1,4 +1,4 @@
-# Vizit - visitors management system
+# Vizit - visitors management system check it out at https://vizit.onrender.com
 
 ## Tech stack used
    -Frontend : HTML,CSS,ejs template
