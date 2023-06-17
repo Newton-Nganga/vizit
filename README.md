@@ -1,9 +1,9 @@
 # Vizit - visitors management system check it out at https://vizit.onrender.com
 
 ## Tech stack used
-   -Frontend : HTML,CSS,ejs template
-   -Backend  : expressjs
-   -Database : sqlite3
+   - Frontend : HTML,CSS,ejs template
+   - Backend  : expressjs
+   - Database : sqlite3
 
 
 * To run the project *
