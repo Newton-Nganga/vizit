@@ -1,10 +1,10 @@
 # Vizit Management System 
 A visitors management system,add ,update ,view and delete guests.Check it out at [vizit](https://vizit.onrender.com)
 
-## Tech stack used
-    👉 Frontend : HTML,CSS,ejs template  
-    👉 Backend  : expressjs  
-    👉 Database : sqlite3  
+## Tech stack used  
+👉 Frontend : HTML,CSS,ejs template  
+👉 Backend  : expressjs   
+👉 Database : sqlite3  
 
 ## Run the Program
 clone this repository
